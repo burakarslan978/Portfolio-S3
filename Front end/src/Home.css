@@ -1,0 +1,44 @@
+.welcome {
+    padding: 2rem;
+    background-color: #f0f0f0;
+  }
+  
+  .welcome-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-text {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .user-info {
+    margin-top: 2rem;
+  }
+  
+  .user-info-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .user-info-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .user-info-item {
+    flex-basis: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user-info-item b {
+    font-weight: bold;
+  }
+  
+  .user-info-image {
+    margin-left: auto;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
