@@ -5,6 +5,7 @@ import { Layout } from './Layout';
 import './custom.css';
 import { UserContext } from './UserContext';
 import { auth } from './firebase';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const navigate = useNavigate();

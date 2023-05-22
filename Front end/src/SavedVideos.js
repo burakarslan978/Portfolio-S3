@@ -4,26 +4,32 @@ import { auth } from './firebase';
 import { UserContext } from './UserContext';
 import { Link } from 'react-router-dom';
 import filesize from 'filesize';
+import { getUserVideos } from './APICalls';
 
 const SavedVideos = () => {
   const [videos, setVideos] = useState([]);
   const { user } = useContext(UserContext);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const apiUrl = `http://localhost:5157/FirebaseStorageService?email=${encodeURIComponent(user.email)}`;
-        fetch(apiUrl)
-          .then((response) => response.json())
-          .then((data) => setVideos(data));
+      const videoData = getUserVideos(user.email)
+      if (videoData != false){
+        setVideos(user.email);
+      } else {
+        setError("Er is iets fout gegaan bij het ophalen van de gegevens");
       }
-    });
+      
+    }});
   }, [])
 
   return (
     <div className="saved-videos">
       <h1 className="saved-videos-title">Opgeslagen beelden</h1>
-      {videos.length === 0 ? (
+      {error ? (
+        <p className="saved-videos-error">{error}</p>
+      ) : videos.length === 0 ? (
         <p className="saved-videos-empty">Er is geen beeldmateriaal</p>
       ) : (
         <table className="saved-videos-table">

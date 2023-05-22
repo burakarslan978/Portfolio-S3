@@ -11,29 +11,29 @@ const VideoStream = () => {
   const { id } = useParams();
   const { video } = location.state;
 
-  /*return (
-    <div>
-      <h3>{video.name}</h3>
-      <p>Size: {filesize(video.size)}</p>
-      <Player>
-        <source src={video.downloadUrl} />
-      </Player>
-    </div>
-  );
-}*/
-
 
   return (
-    <div className="video-player">
-      <h1>{video.name}</h1>
-      <p>Size: {filesize(video.size)}</p>
-      <div className="player-wrapper">
-        <Player>
-          <source src={video.downloadUrl} />
-        </Player>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-8 mx-auto">
+          <div className="video-player my-5">
+            <h1 className="text-center">{video.name}</h1>
+            <p className="text-center">Size: {filesize(video.size)}</p>
+            <div className="embed-responsive embed-responsive-16by9">
+              <Player className="embed-responsive-item">
+                <source src={video.downloadUrl} />
+              </Player>
+            </div>
+            <div className="d-flex justify-content-center mt-4">
+              <a href={video.downloadUrl} download={video.name}>
+                <button className="btn btn-primary">Download</button>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
-  }
+}
 
 export default VideoStream;

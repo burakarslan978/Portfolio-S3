@@ -9,15 +9,38 @@ import { auth } from './firebase';
 export const NavMenu = () => {
   const [collapsed, setCollapsed] = useState(true);
   const { user, setUser } = useContext(UserContext);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-      }
-    });
+        checkEmail(user.email);
+    }});
 
   }, [])
+
+  const checkEmail = async (email) => {
+    try {
+      const response = await fetch(
+        `http://localhost:5157/FirebaseStorageService/CheckEmail?email=${encodeURIComponent(email)}`
+      );
+      const data = await response.json();
+      const id = data.id;
+      console.log(id);
+      if (id === "0") {
+        console.log(id);
+        setIsRegistered(false);
+        return false;
+      } else {
+        setIsRegistered(true);
+        return true;
+      }
+    } catch (error) {
+      // Show error message
+      console.log(error);
+    }
+  };
 
   const toggleNavbar = () => {
     setCollapsed(!collapsed);
@@ -43,7 +66,7 @@ export const NavMenu = () => {
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!collapsed} navbar>
           <ul className="navbar-nav flex-grow">
-            {user && (
+            {isRegistered && (
               <>
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/home">
@@ -55,16 +78,19 @@ export const NavMenu = () => {
                     Opgeslagen beelden
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" onClick={handleLogout}>
-                    Logout
-                  </NavLink>
-                </NavItem>
               </>
+            )}
+            {user && (
+              <NavItem>
+                <NavLink tag={Link} className="text-dark" onClick={handleLogout}>
+                  Logout
+                </NavLink>
+              </NavItem>
             )}
           </ul>
         </Collapse>
       </Navbar>
     </header>
+
   );
 };

@@ -89,3 +89,13 @@ C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\o
 C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\motohut-security-769d528f7b55.json
 C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\motohut-security-667ba3d83463.json
 C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\client_secret_8269603118-b1gfroc06siiiqhgoejr8kf6l2k71lvo.apps.googleusercontent.com.json
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Google.Api.CommonProtos.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Google.Api.Gax.Grpc.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Google.LongRunning.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Google.Protobuf.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Grpc.Auth.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Grpc.Core.Api.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Grpc.Net.Client.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Grpc.Net.Common.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\System.Linq.Async.dll
+C:\Users\grapi\Desktop\ICTsemester3\Individueel\API git clone\motohut_security\bin\Debug\net7.0\Google.Cloud.Datastore.V1.dll
